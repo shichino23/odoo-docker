@@ -1,0 +1,5 @@
+python-jose
+pyjwt
+simplejson==3.17.2
+python-docx
+openpyxl
