@@ -8,7 +8,7 @@ Be sure image postgres installed on a server (Copy image to from another to serv
 
 # CREATE DOCKER IMAGE
 Run script
-> docker build -t `odoo:<version>` [path_to_docker_file] 
+> docker build -t `odoo:<version>` `<path_to_docker_file>`
 
 - For add external libraries: \
     + Add line inside file `requirements_extra.txt`
@@ -25,7 +25,7 @@ Run script
 
 # RUN CONTAINER WITH IMAGE
 
-> docker run -d -v /home/vt_admin/odoo/config:/etc/odoo -v /home/vt_admin/odoo/addons:/mnt/extra-addons -p 8010:8069 --name odoo --link db:db -t `odoo:<version>`
+> docker run -d -v `<path>/config:/etc/odoo` -v `<path>/addons:/mnt/extra-addons` -p 8010:8069 --name odoo --link db:db -t `odoo:<version>`
 
 # EXPOSE PORT
 - odoo: 8010
