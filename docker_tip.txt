@@ -1,0 +1,2 @@
+Update addons mới copy lên folder <path>/addons
+Restart container odoo: docker restart odoo 
