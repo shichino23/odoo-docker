@@ -10,10 +10,15 @@ COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # source code odoo
-COPY ./odoo/ /odoo/
+COPY ./SOPEN/ /odoo/
 
 ENV ODOO_BIN=/odoo/odoo-bin 
-ENV ODOO_CONFIG=/odoo/config/odoo.conf 
+ENV ODOO_CONFIG=/odoo/config/odoo.conf
+ENV POSTGRES_USER=odoo
+ENV PASSWORD=admin@123
+ENV DB_HOST=localhost
+ENV DB_PORT=5432
+ENV HTTP_PORT=8069
 
 # create path external
 RUN mkdir -p /odoo/extra-addons
