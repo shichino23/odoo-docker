@@ -19,6 +19,7 @@ ENV PASSWORD=admin@123
 ENV DB_HOST=localhost
 ENV DB_PORT=5432
 ENV HTTP_PORT=8069
+ENV POSTGRES_DB=TEST_ERP
 
 # create path external
 RUN mkdir -p /odoo/extra-addons

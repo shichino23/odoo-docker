@@ -62,3 +62,5 @@ python-logstash==0.4.6
 boto3
 python-docx
 openpyxl
+kubernetes
+pick
