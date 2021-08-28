@@ -22,7 +22,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
         build-essential \
 		libssl-dev \
         wget \
-        python3-dev \
+        python3-dev cargo \
         python3-venv \
         python3-wheel \
         libxslt-dev \
@@ -32,6 +32,14 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
         python3-setuptools \
         node-less \
         libjpeg-dev \
+		libtiff5-dev \
+		libopenjp2-7-dev \
+		zlib1g-dev \
+		libfreetype6-dev \
+		liblcms2-dev \
+		libwebp-dev \
+		libharfbuzz-dev \
+		libfribidi-dev \
         gdebi \
         libpq-dev \
         python-dev \
@@ -39,6 +47,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
         libxslt1-dev \
         libldap2-dev \
         libsasl2-dev \
+		libxcb1-dev libpq-dev \
         libffi-dev \
         curl \
         gnupg2 \
@@ -68,6 +77,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 		fonts-sil-gentium \
 		fonts-texgyre \
 		fonts-tlwg-purisa \
+		swig \
 		dos2unix \
     && apt-get -y -q remove libreoffice-gnome \
 	&& apt -y autoremove \
@@ -79,6 +89,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 # install node js, rtlcss
 RUN apt-get update && apt-get install nodejs npm -y
 RUN npm install -g rtlcss
+
+RUN pip3 install setuptools wheel
 
 # install lib base
 COPY ./requirements_prod.txt /

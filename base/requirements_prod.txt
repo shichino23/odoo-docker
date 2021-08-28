@@ -65,3 +65,13 @@ kubernetes
 pick
 sqlvalidator
 pyotp
+comtypes
+captcha
+python_socketio
+uvicorn==0.13.1
+websockets==8.1
+eventlet
+oauthlib
+pysftp
+rotate_backups_s3
+
