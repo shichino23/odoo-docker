@@ -94,7 +94,11 @@ RUN pip3 install setuptools wheel
 
 # install lib base
 COPY ./requirements_prod.txt /
-RUN pip3 install -r /requirements_prod.txt
+# update pip
+RUN pip3 install --upgrade pip
+RUN apt-get install -y --no-install-recommends mupdf mupdf-tools
+# --use-feature and --use-deprecated use to resolve package
+RUN pip3 install -r /requirements_prod.txt --use-feature=2020-resolver --use-deprecated=legacy-resolver
 
 # install latest postgresql-client
 RUN set -x; \
